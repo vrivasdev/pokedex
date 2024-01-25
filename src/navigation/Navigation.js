@@ -24,7 +24,10 @@ export default function Navigation() {
         name="Pokedex"
         component={PokedexScreen}
         options={{
-          tabBarLabel: () => renderPokeball(),
+          tabBarLabel: () => <Image
+                              source={require("../assets/pokeball.png")}
+                              style={{ width: 75, height: 75, top: -15 }}
+                            />
         }}
       />
       <Tab.Screen
@@ -37,13 +40,4 @@ export default function Navigation() {
       />
     </Tab.Navigator>
   )
-}
-
-function renderPokeball() {
-  return (
-    <Image
-      source={require("../assets/pokeball.png")}
-      style={{ width: 75, height: 75, top: -15 }}
-    />
-  );
 }
